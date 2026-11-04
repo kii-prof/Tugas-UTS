@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pemesanan - BookSpace</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- link navigasi ke file assets untuk logo -->
+      <div class="logo">
+        <img src="ASSETS/logo.jpeg" alt="Logo BookSpace" />
+        <h2>BookSpace</h2>
+      </div>
+      <!-- link navigasi untuk pindah halaman -->
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="stok.html">Katalog</a>
+        <a href="checkout.html" class="aktif">Pemesanan</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
+    </header>
+    <!-- membuat  -->
+    <main class="container">
+      <h1>Halaman Pemesanan</h1>
+      <p>Silakan pilih buku dan lengkapi informasi pemesanan.</p>
+
+      <section class="card">
+        <h2>Pilih Buku</h2>
+        <select id="pilihBuku">
+          <option value="">-- Pilih Buku --</option>
+        </select>
+
+        <!-- <label>Daftar Buku</label>
+        <select id="datakatalogbuku"></select> -->
+
+        <label>Jumlah Buku</label>
+        <input type="number" id="jumlahBuku" value="1" min="1" />
+
+        <button onclick="tambahPesanan()">Tambah ke Keranjang</button>
+      </section>
+
+      <section class="card">
+        <h2>Keranjang Pesanan</h2>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Nama Buku</th>
+                <th>Harga</th>
+                <th>Jumlah</th>
+                <th>Subtotal</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+
+            <tbody id="tabelPesanan"></tbody>
+          </table>
+        </div>
+
+        <h2 id="totalHarga" style="margin-top: 20px">Total: Rp0</h2>
+      </section>
+
+      <section class="card">
+        <h2>Informasi Pemesan</h2>
+
+        <form id="formCheckout">
+          <label>Nama Lengkap</label>
+          <input type="text" id="namaPemesan" required />
+
+          <label>Email</label>
+          <input type="email" id="emailPemesan" required />
+
+          <label>Nomor Telepon</label>
+          <input type="tel" id="telepon" required />
+
+          <label>Alamat Pengiriman</label>
+          <textarea id="alamat" rows="3" required></textarea>
+
+          <label>Metode Pembayaran</label>
+          <select id="pembayaran" required>
+            <option value="">Pilih Pembayaran</option>
+            <option value="Transfer Bank">Transfer Bank</option>
+            <option value="E-Wallet">E-Wallet</option>
+            <option value="COD">Cash On Delivery (COD)</option>
+          </select>
+
+          <button type="submit">Buat Pesanan</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>© 2026 BookSpace</footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

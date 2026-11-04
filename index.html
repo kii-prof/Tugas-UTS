@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - BookSpace</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="login-page">
+      <section class="login-box">
+        <h1>BookSpace</h1>
+        <p>Online Book Store</p>
+
+        <!-- membuat form login -->
+        <form id="formLogin">
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Masukkan email"
+            required
+          />
+          <!-- membuat form password -->
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Masukkan password"
+            required
+          />
+
+          <!-- membuat tombol login -->
+          <button type="submit" class="btn-full">Login</button>
+        </form>
+
+        <p style="margin-top: 20px">
+          <a href="#" onclick="bukaModal('modalLupa')">Lupa Password?</a>
+          |
+          <a href="#" onclick="bukaModal('modalDaftar')">Daftar</a>
+        </p>
+      </section>
+    </main>
+
+    <!-- membuat link navigasi lupa password -->
+    <div class="modal" id="modalLupa">
+      <section class="modal-content">
+        <h2>Lupa Password</h2>
+
+        <label>Email terdaftar</label>
+        <input type="email" id="emailLupa" />
+
+        <button onclick="lupaPassword()">Cari Akun</button>
+        <button class="btn-secondary" onclick="tutupModal()">Tutup</button>
+      </section>
+    </div>
+
+    <!-- membuat link navigasi daftar -->
+    <div class="modal" id="modalDaftar">
+      <section class="modal-content">
+        <h2>Daftar Akun</h2>
+
+        <label>Nama Lengkap</label>
+        <input type="text" id="namaDaftar" />
+
+        <label>Email</label>
+        <input type="email" id="emailDaftar" />
+
+        <label>Password</label>
+        <input type="password" id="passwordDaftar" />
+
+        <button onclick="daftarAkun()">Daftar Sekarang</button>
+        <button class="btn-secondary" onclick="tutupModal()">Tutup</button>
+      </section>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
