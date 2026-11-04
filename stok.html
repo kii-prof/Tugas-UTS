@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informasi Stok - BookSpace</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- link navigasi ke file assets untuk logo -->
+      <div class="logo">
+        <img src="ASSETS/logo.jpeg" alt="Logo BookSpace" />
+        <h2>BookSpace</h2>
+      </div>
+      <!-- link navigasi untuk pindah halaman -->
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="stok.html" class="aktif">Katalog</a>
+        <a href="checkout.html">Pemesanan</a>
+        <a href="tracking.html">Tracking</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Informasi Stok Buku</h1>
+      <p>Temukan buku yang tersedia di BookSpace.</p>
+      <!-- membuat daftar katalog buku -->
+      <section class="card">
+        <h2>Daftar Katalog Buku</h2>
+
+        <div id="daftarBuku" class="book-grid"></div>
+      </section>
+      <!-- membuat form untuk menambah stok buku -->
+      <section class="card">
+        <h2>Tambah Stok Buku</h2>
+
+        <form id="formBuku">
+          <label for="kodeBuku">Kode Buku</label>
+          <input type="text" id="kodeBuku" required />
+
+          <label for="judulBuku">Judul Buku</label>
+          <input type="text" id="judulBuku" required />
+
+          <label for="hargaBuku">Harga Buku</label>
+          <input type="number" id="hargaBuku" min="1" required />
+
+          <label for="stokBuku">Jumlah Stok</label>
+          <input type="number" id="stokBuku" min="0" required />
+
+          <button type="submit">Tambah Buku</button>
+        </form>
+      </section>
+      <!-- membuat tabel data stok -->
+      <section class="card">
+        <h2>Tabel Data Stok</h2>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Kode</th>
+                <th>Judul Buku</th>
+                <th>Harga</th>
+                <th>Stok</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+
+            <tbody id="tabelStok"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2026 BookSpace</footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

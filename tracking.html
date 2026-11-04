@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tracking Pengiriman - BookSpace</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- link navigasi ke file assets untuk logo -->
+    <header>
+      <div class="logo">
+        <img src="ASSETS/logo.jpeg" alt="Logo BookSpace" />
+        <h2>BookSpace</h2>
+      </div>
+      <!-- link navigasi untuk pindah halaman -->
+      <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="stok.html">Katalog</a>
+        <a href="checkout.html">Pemesanan</a>
+        <a href="tracking.html" class="aktif">Tracking</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
+    </header>
+    <!-- membuat tracking pengiriman -->
+    <main class="container">
+      <h1>Tracking Pengiriman</h1>
+      <p>Lacak pesanan buku Anda menggunakan nomor Delivery Order.</p>
+
+      <section class="card">
+        <h2>Cari Pesanan</h2>
+
+        <label>Nomor Delivery Order</label>
+        <input type="text" id="nomorDO" placeholder="Masukkan nomor DO" />
+
+        <button onclick="cariPengiriman()">Cari Pesanan</button>
+      </section>
+
+      <section class="card" id="hasilTracking" style="display: none">
+        <h2>Informasi Pesanan</h2>
+
+        <p><strong>Nomor DO:</strong> <span id="hasilDO"></span></p>
+        <p><strong>Nama Pemesan:</strong> <span id="hasilNama"></span></p>
+        <p><strong>Ekspedisi:</strong> <span id="hasilEkspedisi"></span></p>
+        <p><strong>Tanggal Kirim:</strong> <span id="hasilTanggal"></span></p>
+        <p><strong>Jenis Paket:</strong> <span id="hasilPaket"></span></p>
+        <p><strong>Pembayaran:</strong> <span id="hasilPembayaran"></span></p>
+        <p><strong>Total Pembayaran:</strong> <span id="hasilTotal"></span></p>
+
+        <h2 style="margin-top: 25px">Status Pengiriman</h2>
+
+        <div class="progress">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <span class="status" id="hasilStatus"></span>
+
+        <p id="pesanStatus" style="margin-top: 15px"></p>
+      </section>
+    </main>
+
+    <footer>© 2026 BookSpace</footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
